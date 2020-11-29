@@ -23,7 +23,9 @@ You should have received a copy of the GNU Lesser General Public
 License along with this library; if not, write to the Free Software
 Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA
  */
+#ifndef __MBED__
 #include <Arduino.h>
+#endif
 #include "MD_MAX72xx.h"
 #include "MD_MAX72xx_lib.h"
 
@@ -216,7 +218,7 @@ bool MD_MAX72XX::transform(uint8_t startDev, uint8_t endDev, transformType_t tty
 
     case TFLR: // Transform Flip Left to Right (use the whole field)
     // first reverse the device buffers end for end
-    for (uint8_t buf = 0; buf < (endDev - startDev)/2; buf++)
+    for (uint8_t buf = 0; buf < (endDev - startDev + 1)/2; buf++)
     {
       deviceInfo_t	t;
 
