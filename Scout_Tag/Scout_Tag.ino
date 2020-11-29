@@ -62,8 +62,7 @@ void setup()
   Serial.begin(9600);
   mx.begin();
   mx.control(MD_MAX72XX::INTENSITY, intensity);
-  Serial.print("FontInfo, firstASCII:");
-  Serial.print(mx._fontInfo.firstASCII);
+  Serial.println("ScoutTag, JotaJoti BEO. Ich bin deine LED-Matrix.");
 }
 
 void loop()
